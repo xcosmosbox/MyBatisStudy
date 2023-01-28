@@ -36,6 +36,9 @@ public class MyBatisIntroductionTest{
         // manual commit
         sqlSession.commit();
 
+        // close resources
+        sqlSession.close();
+
 
 
     }
