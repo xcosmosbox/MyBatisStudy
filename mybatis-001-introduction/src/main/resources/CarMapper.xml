@@ -2,15 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.mybatis.example.BlogMapper">
+<mapper namespace="hiuhiu">
 
     <insert id="insertCar">
         insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
         value(null,'1003','ftbd',30.0,'2000-10-11','ryc')
     </insert>
-    <delete id=""></delete>
-    <update id=""></update>
-    <select id=""></select>
+<!--    <delete id="">-->
+
+<!--    </delete>-->
+<!--    <update id=""></update>-->
+<!--    <select id=""></select>-->
 
 
 </mapper>
