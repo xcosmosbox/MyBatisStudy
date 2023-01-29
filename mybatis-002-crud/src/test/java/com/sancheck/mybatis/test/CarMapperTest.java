@@ -1,5 +1,6 @@
 package com.sancheck.mybatis.test;
 
+import com.sancheck.mybatis.pojo.Car;
 import com.sancheck.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -15,6 +16,20 @@ import java.util.Map;
  * @create: 29/1/2023
  */
 public class CarMapperTest {
+
+    @Test
+    public void testInsertCarByPOJO(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+
+        Car car = new Car(null,"3333","BYDT",30.0,"2020-11-11","new energy");
+
+
+        int count = sqlSession.insert("insertCar",car);
+        System.out.println(count);
+        sqlSession.commit();
+        sqlSession.close();
+
+    }
 
     @Test
     public void testInsertCar(){

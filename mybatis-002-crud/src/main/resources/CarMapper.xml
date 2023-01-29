@@ -5,8 +5,11 @@
 <mapper namespace="jkljl">
 
     <insert id="insertCar">
+        <!--
         insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
         value(null,#{k1},#{k2},#{k3},#{k4},#{k5})
+        -->
+        insert into t_car(id,car_num,brand,guide_price,produce_time,car_type) values(null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
     </insert>
 <!--    <delete id="">-->
 
