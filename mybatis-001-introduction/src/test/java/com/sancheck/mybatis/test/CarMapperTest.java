@@ -1,5 +1,6 @@
 package com.sancheck.mybatis.test;
 
+import com.sancheck.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,6 +17,16 @@ import java.io.InputStream;
  * @create: 29/1/2023
  */
 public class CarMapperTest {
+
+    @Test
+    public void testInsertCarByUtil(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        int count = sqlSession.insert("insertCar");
+        System.out.println(count);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
 
     @Test
     public void testInsertCar(){

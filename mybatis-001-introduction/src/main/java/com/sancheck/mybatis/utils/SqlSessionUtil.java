@@ -16,9 +16,9 @@ import java.io.InputStream;
  * @description:
  * @create: 29/1/2023
  */
-public class sqlSessionUtil {
+public class SqlSessionUtil {
 
-    private sqlSessionUtil(){
+    private SqlSessionUtil(){
 
     }
 
