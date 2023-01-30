@@ -20,7 +20,7 @@ public class CarMapperTest {
     @Test
     public void testUpdateById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
-        Car car = new Car(4L,"9999","MCR",30.3,"1999-11-10","ryc");
+        Car car = new Car(173L,"9999","MCR",30.3,"1999-11-10","ryc");
         sqlSession.update("updateById",car);
         sqlSession.commit();
         sqlSession.close();
