@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +17,17 @@ import java.util.Map;
  * @create: 29/1/2023
  */
 public class CarMapperTest {
+
+    @Test
+    public void testSelectAll(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        List<Car> carList =  sqlSession.selectList("selectAll");
+        carList.forEach(car -> System.out.println(car));
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+
 
     @Test
     public void testSelectById(){
