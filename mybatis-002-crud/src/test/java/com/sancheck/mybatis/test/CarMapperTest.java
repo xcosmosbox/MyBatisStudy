@@ -21,7 +21,7 @@ public class CarMapperTest {
     @Test
     public void testSelectAll(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
-        List<Car> carList =  sqlSession.selectList("selectAll");
+        List<Car> carList =  sqlSession.selectList("jkljl.selectAll");
         carList.forEach(car -> System.out.println(car));
         sqlSession.commit();
         sqlSession.close();
@@ -32,7 +32,7 @@ public class CarMapperTest {
     @Test
     public void testSelectById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
-        Car car =  sqlSession.selectOne("selectById",173L);
+        Car car =  sqlSession.selectOne("jkljl.selectById",173L);
         System.out.println(car);
         sqlSession.commit();
         sqlSession.close();
@@ -43,7 +43,7 @@ public class CarMapperTest {
     public void testUpdateById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
         Car car = new Car(173L,"9999","MCR",30.3,"1999-11-10","ryc");
-        sqlSession.update("updateById",car);
+        sqlSession.update("jkljl.updateById",car);
         sqlSession.commit();
         sqlSession.close();
 
@@ -54,7 +54,7 @@ public class CarMapperTest {
     @Test
     public void testDeleteById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
-        sqlSession.delete("deleteById",59); // number '59' only for test
+        sqlSession.delete("jkljl.deleteById",59); // number '59' only for test
         sqlSession.commit();
         sqlSession.close();
     }
@@ -67,7 +67,7 @@ public class CarMapperTest {
         Car car = new Car(null,"3333","BYDT",30.0,"2020-11-11","new energy");
 
 
-        int count = sqlSession.insert("insertCar",car);
+        int count = sqlSession.insert("jkljl.insertCar",car);
         System.out.println(count);
         sqlSession.commit();
         sqlSession.close();
@@ -85,7 +85,7 @@ public class CarMapperTest {
         map.put("k5","electric car");
 
         SqlSession sqlSession = SqlSessionUtil.openSession();
-        int count = sqlSession.insert("insertCar",map);
+        int count = sqlSession.insert("jkljl.insertCar",map);
         System.out.println(count);
         sqlSession.commit();
         sqlSession.close();
