@@ -5,7 +5,7 @@
 <mapper namespace="jkljl">
     
     <select id="selectById" resultType="com.sancheck.mybatis.pojo.Car">
-        select * from t_car where id=#{id}
+        select id, car_num as carNum, brand, guide_price as guidePrice, produce_time as produceTime, car_type as carType  from t_car where id=#{id}
     </select>
     
     <update id="updateById">
