@@ -18,6 +18,18 @@ import java.util.Map;
 public class CarMapperTest {
 
     @Test
+    public void testUpdateById(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        Car car = new Car(4L,"9999","MCR",30.3,"1999-11-10","ryc");
+        sqlSession.update("updateById",car);
+        sqlSession.commit();
+        sqlSession.close();
+
+    }
+
+
+
+    @Test
     public void testDeleteById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
         sqlSession.delete("deleteById",59); // number '59' only for test
