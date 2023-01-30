@@ -4,6 +4,10 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jkljl">
     
+    <select id="selectById" resultType="com.sancheck.mybatis.pojo.Car">
+        select * from t_car where id=#{id}
+    </select>
+    
     <update id="updateById">
         update t_car set car_num=#{carNum}, brand=#{brand}, guide_price=#{guidePrice}, produce_time=#{produceTime}, car_type=#{carType} where id=#{id}
     </update>
