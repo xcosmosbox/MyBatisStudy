@@ -18,6 +18,16 @@ import java.util.Map;
 public class CarMapperTest {
 
     @Test
+    public void testSelectById(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        Car car =  sqlSession.selectOne("selectById",173L);
+        System.out.println(car);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+
+    @Test
     public void testUpdateById(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
         Car car = new Car(173L,"9999","MCR",30.3,"1999-11-10","ryc");
