@@ -4,10 +4,6 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <settings>
-        <setting name="logImpl" value="SLF4J"/>
-    </settings>
-
     <properties>
         <property name="jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="jdbc.url" value="jdbc:mysql://localhost:3306/SRS"/>
@@ -15,6 +11,10 @@
         <property name="jdbc.password" value="yfen$otto"/>
     </properties>
 
+    <settings>
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
+    
 
     <environments default="development">
         <environment id="development">
