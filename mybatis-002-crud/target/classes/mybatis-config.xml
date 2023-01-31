@@ -4,6 +4,15 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+<!--    <properties>-->
+<!--        <property name="jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--        <property name="jdbc.url" value="jdbc:mysql://localhost:3306/SRS"/>-->
+<!--        <property name="jdbc.username" value="root"/>-->
+<!--        <property name="jdbc.password" value="yfen$otto"/>-->
+<!--    </properties>-->
+
+    <properties resource="jdbc.properties"/>
+
     <settings>
         <setting name="logImpl" value="SLF4J"/>
     </settings>
@@ -13,10 +22,10 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/SRS"/>
-                <property name="username" value="root"/>
-                <property name="password" value="yfen$otto"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
