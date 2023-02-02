@@ -1,5 +1,7 @@
 package com.sancheck.bank.service.impl;
 
+import com.sancheck.bank.service.AccountService;
+
 /**
  * @author: fengyuxiang
  * @ClassName: AccountServiceImpl
@@ -7,5 +9,9 @@ package com.sancheck.bank.service.impl;
  * @description:
  * @create: 2/2/2023
  */
-public class AccountServiceImpl {
+public class AccountServiceImpl implements AccountService {
+    @Override
+    public void transfer(String fromActno, String toActno, double money) {
+
+    }
 }
