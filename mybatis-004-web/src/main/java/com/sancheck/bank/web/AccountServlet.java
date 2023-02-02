@@ -1,5 +1,7 @@
 package com.sancheck.bank.web;
 
+import com.sancheck.bank.service.AccountService;
+import com.sancheck.bank.service.impl.AccountServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,6 +19,9 @@ import java.io.IOException;
  */
 @WebServlet("/transfer")
 public class AccountServlet extends HttpServlet {
+
+    private AccountService accountService = new AccountServiceImpl();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fromActno = request.getParameter("fromActno");
