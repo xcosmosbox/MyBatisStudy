@@ -23,6 +23,10 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public int updateByActno(Account act) {
-        return 0;
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        int count = sqlSession.update("account.updateByActno",act);
+        sqlSession.commit();
+        sqlSession.close();
+        return count;
     }
 }
