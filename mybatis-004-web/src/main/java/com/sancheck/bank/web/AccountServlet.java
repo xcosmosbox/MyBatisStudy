@@ -1,5 +1,7 @@
 package com.sancheck.bank.web;
 
+import com.sancheck.bank.exceptions.MoneyNotEnoughException;
+import com.sancheck.bank.exceptions.TransferException;
 import com.sancheck.bank.service.AccountService;
 import com.sancheck.bank.service.impl.AccountServiceImpl;
 import jakarta.servlet.ServletException;
@@ -28,7 +30,16 @@ public class AccountServlet extends HttpServlet {
         String toActon = request.getParameter("toActno");
         double money = Double.parseDouble(request.getParameter("money"));
 
+        try {
+            accountService.transfer(fromActno,toActon,money);
 
+            response.sendRedirect(request.getContextPath() + "/success.html");
+        } catch (MoneyNotEnoughException e) {
+            response.sendRedirect(request.getContextPath() + "/error1.html");
+        } catch (TransferException e) {
+            response.sendRedirect(request.getContextPath() + "/error2.html");
+
+        }
 
     }
 }
