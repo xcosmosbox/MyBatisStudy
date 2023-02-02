@@ -29,7 +29,9 @@
             </dataSource>
         </environment>
     </environments>
+
+
     <mappers>
-        <mapper resource="CarMapper.xml"/>
+        <mapper resource="AccountMapper.xml"/>
     </mappers>
 </configuration>
