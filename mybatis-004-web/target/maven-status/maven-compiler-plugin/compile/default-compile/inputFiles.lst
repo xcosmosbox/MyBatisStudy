@@ -7,3 +7,4 @@
 /Users/fengyuxiang/IdeaProjects/MyBatisStudy/mybatis-004-web/src/main/java/com/sancheck/bank/service/AccountService.java
 /Users/fengyuxiang/IdeaProjects/MyBatisStudy/mybatis-004-web/src/main/java/com/sancheck/bank/service/impl/AccountServiceImpl.java
 /Users/fengyuxiang/IdeaProjects/MyBatisStudy/mybatis-004-web/src/main/java/com/sancheck/bank/dao/AccountDao.java
+/Users/fengyuxiang/IdeaProjects/MyBatisStudy/mybatis-004-web/src/main/java/com/sancheck/bank/utils/GenerateDaoProxy.java

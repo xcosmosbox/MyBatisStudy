@@ -6,6 +6,7 @@ import com.sancheck.bank.exceptions.MoneyNotEnoughException;
 import com.sancheck.bank.exceptions.TransferException;
 import com.sancheck.bank.pojo.Account;
 import com.sancheck.bank.service.AccountService;
+import com.sancheck.bank.utils.GenerateDaoProxy;
 import com.sancheck.bank.utils.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 
@@ -18,7 +19,8 @@ import org.apache.ibatis.session.SqlSession;
  */
 public class AccountServiceImpl implements AccountService {
 
-    private AccountDao accountDao = new AccountDaoImpl();
+//    private AccountDao accountDao = new AccountDaoImpl();
+    private AccountDao accountDao = (AccountDao) GenerateDaoProxy.generate(SqlSessionUtil.openSession(), AccountDao.class);
     @Override
     public void transfer(String fromActno, String toActno, double money) throws MoneyNotEnoughException, TransferException{
 
