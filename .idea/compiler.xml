@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="junit-test" />
-        <module name="mybatis-001-introduction" />
+        <module name="mybatis-006-antic" />
         <module name="mybatis-004-web" />
+        <module name="mybatis-005-crud2" />
+        <module name="mybatis-001-introduction" />
         <module name="javassist-test" />
         <module name="mybatis-002-crud" />
         <module name="mybatis-003-configuration" />
