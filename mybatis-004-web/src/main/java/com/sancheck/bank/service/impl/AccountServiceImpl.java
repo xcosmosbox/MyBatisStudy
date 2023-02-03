@@ -6,6 +6,8 @@ import com.sancheck.bank.exceptions.MoneyNotEnoughException;
 import com.sancheck.bank.exceptions.TransferException;
 import com.sancheck.bank.pojo.Account;
 import com.sancheck.bank.service.AccountService;
+import com.sancheck.bank.utils.SqlSessionUtil;
+import org.apache.ibatis.session.SqlSession;
 
 /**
  * @author: fengyuxiang
@@ -19,6 +21,10 @@ public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao = new AccountDaoImpl();
     @Override
     public void transfer(String fromActno, String toActno, double money) throws MoneyNotEnoughException, TransferException{
+
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+
+
         Account fromAct = accountDao.selectByActno(fromActno);
 
         if (fromAct.getBalance() < money){
@@ -37,6 +43,8 @@ public class AccountServiceImpl implements AccountService {
         }
 
 
+        sqlSession.commit();
+        SqlSessionUtil.close(sqlSession);
 
 
     }
