@@ -39,9 +39,28 @@ public class SqlSessionUtil {
 
     }
 
+    // one server one ThreadLocal
+    private static ThreadLocal<SqlSession> local = new ThreadLocal<>();
+
     public static SqlSession openSession(){
+        SqlSession sqlSession = local.get();
+        if (sqlSession == null){
+            sqlSession = sqlSessionFactory.openSession();
+            local.set(sqlSession);
+        }
         //Getting SqlSession object
-        return sqlSessionFactory.openSession();
+        return sqlSession;
+    }
+
+    /**
+     * Close the SqlSession object from current thread
+     * @param sqlSession
+     */
+    public static void close(SqlSession sqlSession){
+        if (sqlSession == null) {
+            sqlSession.close();
+            local.remove();
+        }
     }
 
 }
