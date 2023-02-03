@@ -20,7 +20,11 @@ import org.apache.ibatis.session.SqlSession;
 public class AccountServiceImpl implements AccountService {
 
 //    private AccountDao accountDao = new AccountDaoImpl();
-    private AccountDao accountDao = (AccountDao) GenerateDaoProxy.generate(SqlSessionUtil.openSession(), AccountDao.class);
+//    private AccountDao accountDao = (AccountDao) GenerateDaoProxy.generate(SqlSessionUtil.openSession(), AccountDao.class);
+
+    private AccountDao accountDao = SqlSessionUtil.openSession().getMapper(AccountDao.class);
+
+
     @Override
     public void transfer(String fromActno, String toActno, double money) throws MoneyNotEnoughException, TransferException{
 
