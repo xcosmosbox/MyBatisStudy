@@ -13,6 +13,27 @@
         select * from t_student where id = #{id}
     </select>
 
+    <select id="selectByName" resultType="Student">
+        select * from t_student where name = #{name}
+    </select>
+
+    <select id="selectByBirth" resultType="Student">
+        select * from t_student where birth = #{birth}
+    </select>
+
+    <select id="selectBySex" resultType="Student">
+        select * from t_student where sex = #{sex}
+    </select>
+
+    <select id="selectByNameAndSex" resultType="Student">
+        select * from t_student where name = #{arg0} and sex = #{arg1}
+<!--        select * from t_student where name = #{param1} and sex = #{param2}-->
+    </select>
+
+    <select id="selectByNameAndSex2" resultType="Student">
+        select * from t_student where name = #{name} and sex = #{sex}
+    </select>
+
 
 
 
