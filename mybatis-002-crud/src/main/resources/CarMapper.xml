@@ -6,11 +6,11 @@
 
     <resultMap id="carResultMap" type="com.sancheck.mybatis.pojo.Car">
         <id property="id" column="id"/>
-        <result property="carNum" column="car_num"/>
+        <result property="carNum" column="car_num" javaType="java.lang.String" jdbcType="VARCHAR"/>
         <result property="brand" column="brand"/>
         <result property="guidePrice" column="guide_price"/>
         <result property="produceTime" column="produce_time"/>
-        <result property="carType" column="car_type"/>
+        <result property="carType" column="car_type" javaType="java.lang.String" jdbcType="VARCHAR"/>
     </resultMap>
 
 
